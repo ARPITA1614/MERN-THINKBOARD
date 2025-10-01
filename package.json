@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start":"npm run start --prefix backend"
-  },
+  "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+  "start": "concurrently -n BACKEND,FRONTEND -c red,blue \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ARPITA1614/MERN-THINKBOARD.git"
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ARPITA1614/MERN-THINKBOARD/issues"
   },
-  "homepage": "https://github.com/ARPITA1614/MERN-THINKBOARD#readme"
+  "homepage": "https://github.com/ARPITA1614/MERN-THINKBOARD#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
